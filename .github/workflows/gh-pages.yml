@@ -33,7 +33,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
-          PERSONAL_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_DIR: ./toothlessos-log/public # 注意修改成你使用hugo创建的项目名称
           EXTERNAL_REPOSITORY: toothlessos/toothlessos.github.io # 你的Github Pages远程仓库名
           PUBLISH_BRANCH: master # 如果不想推送到gh-pages分支，可以添加这一行

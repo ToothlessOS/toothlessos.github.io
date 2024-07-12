@@ -8,8 +8,8 @@ on:
 
 jobs:
   deploy:
-    permissions:
-      contents: read
+    permissions: write
+    contents: read
     runs-on: ubuntu-22.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -18,16 +18,12 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.128.2' # 注意修改成你的hugo版本，以防兼容性错误
           extended: true # 是否启用hugo extended
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: hugo --minify
@@ -41,10 +37,6 @@ jobs:
           PUBLISH_DIR: ./toothlessos-log/public # 注意修改成你使用hugo创建的项目名称
           EXTERNAL_REPOSITORY: toothlessos/toothlessos.github.io # 你的Github Pages远程仓库名
           PUBLISH_BRANCH: master # 如果不想推送到gh-pages分支，可以添加这一行
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish current workdir (which contains generated content) to GitHub Pages
         uses: rayluo/github-pages-overwriter@v1.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -36,7 +36,7 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_DIR: ./toothlessos-log/public # 注意修改成你使用hugo创建的项目名称
           EXTERNAL_REPOSITORY: toothlessos/toothlessos.github.io # 你的Github Pages远程仓库名
-          PUBLISH_BRANCH: master # 如果不想推送到gh-pages分支，可以添加这一行
+          PUBLISH_BRANCH: gh-pages # 如果不想推送到gh-pages分支，可以添加这一行
 
       - name: Publish current workdir (which contains generated content) to GitHub Pages
         uses: rayluo/github-pages-overwriter@v1.3

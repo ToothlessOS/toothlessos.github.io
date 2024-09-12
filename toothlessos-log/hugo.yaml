@@ -33,7 +33,7 @@ services:
         shortname: "toothlessos"
     # GA Tracking ID
     googleAnalytics:
-        id:
+        id: "G-3XJR05EXNK"
 
 permalinks:
     post: /p/:slug/

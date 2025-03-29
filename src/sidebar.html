@@ -1,0 +1,95 @@
+<!-- Sidebar Template -->
+<div class="position-fixed top-0 start-0 p-3" style="width: 280px; height: 100vh; overflow-y: auto; margin-top: 56px;">
+    <div class="card">
+        <div class="card-header">
+            <p class="card-title mb-0">Contents</p>
+        </div>
+        <div class="card-body">
+            <nav id="toc" class="nav flex-column">
+                <!-- Table of contents will be dynamically inserted here -->
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for dynamic TOC generation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toc = document.getElementById('toc');
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    
+    // Create a map to track heading counts
+    const headingCounts = {
+        h1: 0,
+        h2: 0,
+        h3: 0,
+        h4: 0,
+        h5: 0,
+        h6: 0
+    };
+
+    headings.forEach(heading => {
+        // Generate a unique ID for the heading if it doesn't have one
+        if (!heading.id) {
+            const level = heading.tagName.toLowerCase();
+            headingCounts[level]++;
+            heading.id = `${level}-${headingCounts[level]}`;
+        }
+
+        // Create TOC item
+        const li = document.createElement('li');
+        li.className = 'nav-item';
+        
+        // Calculate padding based on heading level
+        const level = parseInt(heading.tagName[1]);
+        const padding = (level - 1) * 1.5; // 1.5rem per level
+        
+        const a = document.createElement('a');
+        a.className = 'nav-link';
+        a.href = `#${heading.id}`;
+        a.style.paddingLeft = `${padding}rem`;
+        a.textContent = heading.textContent;
+        
+        li.appendChild(a);
+        toc.appendChild(li);
+    });
+});
+</script>
+
+<!-- Add smooth scrolling behavior -->
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style for active section in TOC */
+.nav-link.active {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* Add a subtle border to the sidebar */
+.card {
+    border: 1px solid rgba(0,0,0,.125);
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+}
+
+/* Add margin to main content */
+main {
+    margin-left: 280px;
+}
+
+/* Make the sidebar responsive */
+@media (max-width: 768px) {
+    .position-fixed {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 0 !important;
+    }
+    
+    main {
+        margin-left: 0;
+    }
+}
+</style>

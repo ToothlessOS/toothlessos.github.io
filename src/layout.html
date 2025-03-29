@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} -ToothlessOS</title>
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+     <!-- JavaScript Libraries -->
+     <script src="static/js/jquery-3.7.1.min.js"></script>
+     <script src="static/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navigation -->
+    {% include 'menu.html' %}
+
+    <!-- Sidebar -->
+    {% include 'sidebar.html' %}
+
+    <!-- Page Content -->
+    {% block page_content %}{% endblock %}
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+  </body>
+</html

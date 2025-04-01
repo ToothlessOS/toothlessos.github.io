@@ -97,17 +97,17 @@ main {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage -ToothlessOS</title>
+    <title>APIs Documentation -ToothlessOS</title>
     
     <!-- Customized Bootstrap Stylesheet -->
     <!--Fixed the routing problem with url_for() in flask-->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
   </head>
   <body>
      <!-- JavaScript Libraries -->
-     <script src="static/js/jquery-3.7.1.min.js"></script>
-     <script src="static/js/bootstrap.bundle.min.js"></script>
+     <script src="../static/js/jquery-3.7.1.min.js"></script>
+     <script src="../static/js/bootstrap.bundle.min.js"></script>
 
     <!-- Navigation -->
     <!-- Bootstrap Navbar Template -->
@@ -153,29 +153,7 @@ main {
     <!-- Page Content -->
     
 
- <div class="container-fluid py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8 text-center py-2">
-            <h1>ToothlessOS 13(*Tomori*) - 13.1.0(2503)</h1>
-            <p class="lead">迷子でもいい　前へ進め</p>
-        </div>
-        <div class="col-md-8 text-center py-2">
-            <h2>What is this?</h2>
-            <p>A web development practice; Everything about ToothlessOS (Myself); A web-based toolbox for daily tasks.</p>
-        </div>
-        <div class="col-md-8 text-center py-2">
-            <h2>About ToothlessOS</h2>
-        </div>
-        <div class="col-md-8 text-center py-2">
-            <h2>ToothlessOS Tools</h2>
-        </div>
-        <div class="col-md-8 text-center py-2">
-            <h2>ToothlessOS Log</h2>
-        </div>
-        <div class="col-md-8 text-center py-2">
-            <h2>ToothlessOS APIs</h2>
-        </div>
-    </div>
+<div class="container-fluid py-5">
 </div>
 
 

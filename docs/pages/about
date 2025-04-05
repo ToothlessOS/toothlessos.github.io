@@ -123,16 +123,16 @@ main {
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/about">About</a>
+                    <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tools/about">Tools</a>
+                    <a class="nav-link" href="../tools/about">Tools</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.toothlessos.xyz/">Log</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tools/api">APIs</a>
+                    <a class="nav-link" href="../tools/api">APIs</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

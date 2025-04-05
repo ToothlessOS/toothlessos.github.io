@@ -42,22 +42,5 @@ def api_get(endpoint):
 def api_post(endpoint):
     pass
 
-# URL generators for Flask-Freezer
-@freezer.register_generator
-def tools():
-    # List all HTML files in the tools directory
-    tools_dir = Path(template_folder) / 'tools'
-    if tools_dir.exists():
-        for file in tools_dir.glob('*.html'):
-            yield {'name': file.stem}
-
-@freezer.register_generator
-def pages():
-    # List all HTML files in the pages directory
-    pages_dir = Path(template_folder) / 'pages'
-    if pages_dir.exists():
-        for file in pages_dir.glob('*.html'):
-            yield {'name': file.stem}
-
 if __name__ == '__main__':
     app.run(port=8080)

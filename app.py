@@ -25,22 +25,13 @@ def serve():
 def home():
     return render_template('index.html')
 
-@app.route('/tools/<name>')
+@app.route('/tools/<name>/')
 def tools(name):
     return render_template(f'tools/{name}.html')
 
-@app.route('/pages/<name>')
+@app.route('/pages/<name>/')
 def pages(name):
     return render_template(f'pages/{name}.html')
-
-# APIs
-@app.get('/api/<endpoint>')
-def api_get(endpoint):
-    pass
-
-@app.post('/api/<endpoint>')
-def api_post(endpoint):
-    pass
 
 if __name__ == '__main__':
     app.run(port=8080)

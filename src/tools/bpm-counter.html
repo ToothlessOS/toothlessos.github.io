@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}>BPM Counter{% endblock %}
+<!-- Add content here -->
+{% block page_content %}
+
+<!-- JavaScript Libraries -->
+<script src="{{ url_for('static', filename='js/bpm-counter.js') }}"></script>
+
+<div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center py-2">
+            <h1>BPM Counter</h1>
+            <p class="lead">Before arrangment: Determine the BPM first!</p>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <h2>Tap the button or your keyboard to start!</h2>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <button type="button" class="btn btn-primary">Tap</button>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <button type="button" class="btn btn-primary">Reset</button>
+        </div>
+        <div class="col-md-8 text-center py-2" id="bpm-display"></div>
+    </div>
+</div>
+
+{% endblock %}

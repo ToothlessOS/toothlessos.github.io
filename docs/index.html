@@ -1,8 +1,11 @@
 <!-- Sidebar Template -->
-<div class="position-fixed top-0 start-0 p-3" style="width: 280px; height: 100vh; overflow-y: auto; margin-top: 56px;">
+<div class="position-fixed top-0 start-0 p-3" style="width: 280px; height: 100vh; overflow-y: auto; margin-top: 56px; z-index: 1000;" id="sidebar">
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             <p class="card-title mb-0">Contents</p>
+            <button class="btn btn-sm btn-outline-secondary d-md-none" id="sidebarToggle">
+                <i class="bi bi-x-lg"></i>
+            </button>
         </div>
         <div class="card-body">
             <nav id="toc" class="nav flex-column">
@@ -11,6 +14,11 @@
         </div>
     </div>
 </div>
+
+<!-- Add a toggle button for mobile -->
+<button class="btn btn-primary position-fixed bottom-0 end-0 m-3 d-md-none" id="mobileToggle" style="z-index: 1001;">
+    <i class="bi bi-list"></i>
+</button>
 
 <!-- JavaScript for dynamic TOC generation -->
 <script>
@@ -54,6 +62,30 @@ document.addEventListener('DOMContentLoaded', function() {
         toc.appendChild(li);
     });
 });
+
+// Add sidebar toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const mobileToggle = document.getElementById('mobileToggle');
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('show');
+    }
+
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    mobileToggle.addEventListener('click', toggleSidebar);
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            !sidebar.contains(event.target) && 
+            !mobileToggle.contains(event.target) && 
+            sidebar.classList.contains('show')) {
+            toggleSidebar();
+        }
+    });
+});
 </script>
 
 <!-- Add smooth scrolling behavior -->
@@ -77,19 +109,38 @@ html {
 /* Add margin to main content */
 main {
     margin-left: 280px;
+    transition: margin-left 0.3s ease;
 }
 
 /* Make the sidebar responsive */
 @media (max-width: 768px) {
-    .position-fixed {
-        position: static !important;
+    #sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: fixed;
         width: 100% !important;
-        height: auto !important;
+        height: 100vh !important;
         margin-top: 0 !important;
+        background: white;
+    }
+
+    #sidebar.show {
+        transform: translateX(0);
     }
     
     main {
         margin-left: 0;
+    }
+
+    #mobileToggle {
+        display: block !important;
+    }
+}
+
+/* Hide mobile toggle on desktop */
+@media (min-width: 769px) {
+    #mobileToggle {
+        display: none !important;
     }
 }
 </style><!doctype html>

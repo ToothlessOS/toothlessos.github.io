@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>>BPM Counter -ToothlessOS</title>
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <!--Fixed the routing problem with url_for() in flask-->
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/css/3Dmol-container.css" rel="stylesheet">
+  </head>
+  <body>
+     <!-- JavaScript Libraries -->
+     <script src="../../static/js/jquery-3.7.1.min.js"></script>
+     <script src="../../static/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navigation -->
+    <!-- Bootstrap Navbar Template -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">ToothlessOS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../pages/about/index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/index.html">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.toothlessos.xyz/">Log</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../api/index.html">APIs</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Contacts
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="https://github.com/ToothlessOS">GitHub</a></li>
+                        <li><a class="dropdown-item" href="https://x.com/ToothlessOS">X</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="mailto:siyuan.cao@dukekunshan.edu.cn">Email</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Page Content -->
+    
+
+<!-- JavaScript Libraries -->
+<script src="../../static/js/bpm-counter.js"></script>
+
+<div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center py-2">
+            <h1>BPM Counter</h1>
+            <p class="lead">Before arrangment: Determine the BPM first!</p>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <h2>Tap the button or your keyboard to start!</h2>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <button type="button" class="btn btn-primary">Tap</button>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <button type="button" class="btn btn-primary">Reset</button>
+        </div>
+        <div class="col-md-8 text-center py-2" id="bpm-display"></div>
+    </div>
+</div>
+
+
+
+    <!-- Footer -->
+    
+
+  </body>
+</html

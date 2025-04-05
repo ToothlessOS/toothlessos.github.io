@@ -9,6 +9,16 @@
 {% block page_content %}
 
 <div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center py-2">
+            <h1>ToothlessOS Tools</h1>
+            <p class="lead">A web-based toolbox for everyone</p>
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <h2><a href="{{ url_for('tools', name='molecule-vis') }}">Simplistic Molecule Visualization</a></h2>
+            <p>Visualize your molecules. Build with 3Dmol.js</p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

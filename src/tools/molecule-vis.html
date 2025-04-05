@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Simplistic Molecule Visualization{% endblock %}
+
+<!-- Add content here -->
+{% block page_content %}
+
+<!-- JavaScript Libraries -->
+<script src="{{ url_for('static', filename='js/3Dmol-min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/molecule-vis.js') }}"></script>
+
+<div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center py-2">
+            <h1>Simplistic Molecule Visualization</h1>
+            <p class="lead">Visualize your molecules. Build with 3Dmol.js</p>
+        </div>
+        <div class="input-group mb-3 py-2 w-50 mx-auto">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="File Source" aria-label="Source" aria-describedby="basic-addon1">
+        </div>
+        <div class="col-md-8 text-center py-2">
+            <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+        <div id="container-vis" class="mol-container"></div>
+    </div>
+</div>
+{% endblock %}
